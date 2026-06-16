@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đại học Trà Vinh - Website Giới thiệu & Tư vấn tự động</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Đại Học Trà Vinh</h1>
+        <p>Mang đến cơ hội học tập chất lượng cho cộng đồng - Cam kết chất lượng ISO 9001</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="pages/welcome.html" target="content-frame">Trang Chủ</a></li>
+            <li><a href="pages/gioithieu.html" target="content-frame">Giới Thiệu</a></li>
+            <li><a href="pages/tuyensinh.html" target="content-frame">Tuyển Sinh</a></li>
+            <li><a href="pages/daotao.html" target="content-frame">Đào Tạo</a></li>
+            <li><a href="pages/lienhe.html" target="content-frame">Liên Hệ</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <iframe src="pages/welcome.html" name="content-frame" id="content-frame"></iframe>
+    </div>
+
+    <div class="chatbot-wrapper">
+        <button class="chatbot-toggle-btn" onclick="toggleChat()">💬 Tư vấn trực tuyến 24/7</button>
+        
+        <div class="chatbot-box" id="chatBox">
+            <div class="chatbot-header">
+                <span>TVU Chatbot Assistant</span>
+                <button class="close-btn" onclick="toggleChat()">✖</button>
+            </div>
+            <div class="chatbot-messages" id="chatMessages">
+                <div class="msg bot">Xin chào! Tôi có thể giúp gì cho bạn hôm nay?</div>
+            </div>
+            <div class="chatbot-options" id="chatOptions">
+                <button class="option-btn" onclick="askBot('tuyensinh', 'Tuyển sinh Đại học')">Tuyển sinh Đại học</button>
+                <button class="option-btn" onclick="askBot('hocphi', 'Học phí & Học bổng')">Học phí & Học bổng</button>
+                <button class="option-btn" onclick="askBot('lienhe', 'Thông tin Liên hệ')">Thông tin Liên hệ</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Đại học Trà Vinh. Giấy phép số 123/GP-TTĐT</p>
+        <p>Địa chỉ: 126 Nguyễn Thiện Thành, Phường 5, Trà Vinh</p>
+    </footer>
+
+    <script>
+        function toggleChat() {
+            const chatBox = document.getElementById('chatBox');
+            if (chatBox.style.display === 'none' || chatBox.style.display === '') {
+                chatBox.style.display = 'flex';
+            } else {
+                chatBox.style.display = 'none';
+            }
+        }
+
+        function askBot(key, label) {
+            const chatMessages = document.getElementById('chatMessages');
+            
+            // 1. Hiển thị tin nhắn của Người dùng
+            let userMsg = document.createElement('div');
+            userMsg.className = 'msg user';
+            userMsg.innerText = label;
+            chatMessages.appendChild(userMsg);
+            
+            // Cuộn xuống cuối
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // 2. Giả lập Bot phản hồi sau 500ms dựa trên kịch bản (Dialog Flow)
+            setTimeout(() => {
+                let botMsg = document.createElement('div');
+                botMsg.className = 'msg bot';
+                
+                if (key === 'tuyensinh') {
+                    botMsg.innerHTML = "TVU tuyển sinh đại học chính quy với nhiều phương thức: xét điểm thi THPT, xét học bạ THPT, và xét kết quả thi đánh giá năng lực. Bạn có thể nhấn vào mục <b>Tuyển sinh</b> trên menu để xem chi tiết.";
+                } else if (key === 'hocphi') {
+                    botMsg.innerHTML = "Trường cam kết mức học phí hợp lý theo quy định công lập và có nhiều chính sách học bổng khuyến khích học tập, hỗ trợ sinh viên vượt khó, miễn giảm học phí cho các ngành đặc thù.";
+                } else if (key === 'lienhe') {
+                    botMsg.innerHTML = "Bạn có thể liên hệ Phòng Tư vấn Tuyển sinh tại số 126 Nguyễn Thiện Thành, Trà Vinh. Điện thoại: 0294.3855246 hoặc xem chi tiết ở trang <b>Liên hệ</b>.";
+                }
+                
+                chatMessages.appendChild(botMsg);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 500);
+        }
+    </script>
+</body>
+</html>
