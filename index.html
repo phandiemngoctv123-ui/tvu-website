@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đại học Trà Vinh - Website Giới thiệu & Tư vấn tự động</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -15,16 +15,16 @@
 
     <nav>
         <ul>
-            <li><a href="pages/welcome.html" target="content-frame">Trang Chủ</a></li>
-            <li><a href="pages/gioithieu.html" target="content-frame">Giới Thiệu</a></li>
-            <li><a href="pages/tuyensinh.html" target="content-frame">Tuyển Sinh</a></li>
-            <li><a href="pages/daotao.html" target="content-frame">Đào Tạo</a></li>
-            <li><a href="pages/lienhe.html" target="content-frame">Liên Hệ</a></li>
+            <li><a href="html/welcome.html" target="content-frame">Trang Chủ</a></li>
+            <li><a href="html/gioithieu.html" target="content-frame">Giới Thiệu</a></li>
+            <li><a href="html/tuyensinh.html" target="content-frame">Tuyển Sinh</a></li>
+            <li><a href="html/daotao.html" target="content-frame">Đào Tạo</a></li>
+            <li><a href="html/lienhe.html" target="content-frame">Liên Hệ</a></li>
         </ul>
     </nav>
 
     <div class="main-container">
-        <iframe src="pages/welcome.html" name="content-frame" id="content-frame"></iframe>
+        <iframe src="html/welcome.html" name="content-frame" id="content-frame"></iframe>
     </div>
 
     <div class="chatbot-wrapper">
@@ -65,7 +65,7 @@
             const chatMessages = document.getElementById('chatMessages');
             
             // 1. Hiển thị tin nhắn của Người dùng
-            let userMsg = document.createElement('div');
+let userMsg = document.createElement('div');
             userMsg.className = 'msg user';
             userMsg.innerText = label;
             chatMessages.appendChild(userMsg);
