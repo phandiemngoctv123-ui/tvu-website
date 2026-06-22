@@ -2,94 +2,54 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đại học Trà Vinh - Website Giới thiệu & Tư vấn tự động</title>
+    <title>Đại học Trà Vinh - Cổng thông tin giới thiệu</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header>
-        <h1>Đại Học Trà Vinh</h1>
-        <p>Mang đến cơ hội học tập chất lượng cho cộng đồng - Cam kết chất lượng ISO 9001</p>
+        <div class="logo-area">
+            <div style="width:50px; height:50px; background: #0B4A99; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; color:white; font-weight:bold;">TVU</div>
+            <div>
+                <h1>Đại học Trà Vinh</h1>
+                <p style="font-size: 12px; color:#666;">Đại học xanh - Vì cộng đồng</p>
+            </div>
+        </div>
     </header>
 
     <nav>
         <ul>
-            <li><a href="html/welcome.html" target="content-frame">Trang Chủ</a></li>
-            <li><a href="html/gioithieu.html" target="content-frame">Giới Thiệu</a></li>
-            <li><a href="html/tuyensinh.html" target="content-frame">Tuyển Sinh</a></li>
-            <li><a href="html/daotao.html" target="content-frame">Đào Tạo</a></li>
-            <li><a href="html/lienhe.html" target="content-frame">Liên Hệ</a></li>
+            <li><a href="gioithieu.html" target="content-frame">Giới thiệu</a></li>
+            <li><a href="tuyensinh.html" target="content-frame">Tuyển sinh 2026</a></li>
+            <li><a href="daotao.html" target="content-frame">Chương trình Đào tạo</a></li>
+            <li><a href="lienhe.html" target="content-frame">Liên hệ</a></li>
         </ul>
     </nav>
 
-    <div class="main-container">
-        <iframe src="html/welcome.html" name="content-frame" id="content-frame"></iframe>
-    </div>
+    <iframe class="main-container" name="content-frame" src="gioithieu.html"></iframe>
 
-    <div class="chatbot-wrapper">
-        <button class="chatbot-toggle-btn" onclick="toggleChat()">💬 Tư vấn trực tuyến 24/7</button>
-        
-        <div class="chatbot-box" id="chatBox">
-            <div class="chatbot-header">
-                <span>TVU Chatbot Assistant</span>
-                <button class="close-btn" onclick="toggleChat()">✖</button>
+    <footer>
+        <p>© 2026 Đại học Trà Vinh - Đồ án thiết kế Web. Sinh viên thực hiện: Phan Thị Diễm Ngọc (DA25TTB).</p>
+    </footer>
+
+    <div id="chatbot-widget">
+        <div id="chat-circle" onclick="toggleChat()">💬</div>
+        <div class="chat-box" id="chatWindow">
+            <div class="chat-header">
+                <span>Trợ lý ảo tuyển sinh TVU</span>
+                <span style="cursor:pointer;" onclick="toggleChat()">✖</span>
             </div>
-            <div class="chatbot-messages" id="chatMessages">
-                <div class="msg bot">Xin chào! Tôi có thể giúp gì cho bạn hôm nay?</div>
+            <div class="chat-logs" id="chatLogs">
+                <div class="chat-msg bot">Xin chào! Tôi là Trợ lý ảo TVU. Tôi có thể tư vấn cho bạn về thông tin tuyển sinh 2026, học phí, học bổng và các ngành đạt chuẩn quốc tế. Bạn cần hỏi gì ạ?</div>
             </div>
-            <div class="chatbot-options" id="chatOptions">
-                <button class="option-btn" onclick="askBot('tuyensinh', 'Tuyển sinh Đại học')">Tuyển sinh Đại học</button>
-                <button class="option-btn" onclick="askBot('hocphi', 'Học phí & Học bổng')">Học phí & Học bổng</button>
-                <button class="option-btn" onclick="askBot('lienhe', 'Thông tin Liên hệ')">Thông tin Liên hệ</button>
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Nhập câu hỏi tại đây..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">Gửi</button>
             </div>
         </div>
     </div>
 
-    <footer>
-        <p>© 2026 Đại học Trà Vinh. Giấy phép số 123/GP-TTĐT</p>
-        <p>Địa chỉ: 126 Nguyễn Thiện Thành, Phường 5, Trà Vinh</p>
-    </footer>
-
-    <script>
-        function toggleChat() {
-            const chatBox = document.getElementById('chatBox');
-            if (chatBox.style.display === 'none' || chatBox.style.display === '') {
-                chatBox.style.display = 'flex';
-            } else {
-                chatBox.style.display = 'none';
-            }
-        }
-
-        function askBot(key, label) {
-            const chatMessages = document.getElementById('chatMessages');
-            
-            // 1. Hiển thị tin nhắn của Người dùng
-let userMsg = document.createElement('div');
-            userMsg.className = 'msg user';
-            userMsg.innerText = label;
-            chatMessages.appendChild(userMsg);
-            
-            // Cuộn xuống cuối
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-
-            // 2. Giả lập Bot phản hồi sau 500ms dựa trên kịch bản (Dialog Flow)
-            setTimeout(() => {
-                let botMsg = document.createElement('div');
-                botMsg.className = 'msg bot';
-                
-                if (key === 'tuyensinh') {
-                    botMsg.innerHTML = "TVU tuyển sinh đại học chính quy với nhiều phương thức: xét điểm thi THPT, xét học bạ THPT, và xét kết quả thi đánh giá năng lực. Bạn có thể nhấn vào mục <b>Tuyển sinh</b> trên menu để xem chi tiết.";
-                } else if (key === 'hocphi') {
-                    botMsg.innerHTML = "Trường cam kết mức học phí hợp lý theo quy định công lập và có nhiều chính sách học bổng khuyến khích học tập, hỗ trợ sinh viên vượt khó, miễn giảm học phí cho các ngành đặc thù.";
-                } else if (key === 'lienhe') {
-                    botMsg.innerHTML = "Bạn có thể liên hệ Phòng Tư vấn Tuyển sinh tại số 126 Nguyễn Thiện Thành, Trà Vinh. Điện thoại: 0294.3855246 hoặc xem chi tiết ở trang <b>Liên hệ</b>.";
-                }
-                
-                chatMessages.appendChild(botMsg);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 500);
-        }
-    </script>
+    <script src="data/chatbot-db.js"></script>
+    <script src="js/chatbot.js"></script>
 </body>
 </html>
