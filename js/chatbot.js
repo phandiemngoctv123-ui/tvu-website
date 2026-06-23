@@ -58,3 +58,9 @@ function processNLP(text) {
     // Nếu không khớp từ khóa nào, trả về câu thoại Fallback mặc định
     return CHATBOT_DB.fallback;
 }
+
+// Hàm xử lý Bật/Tắt Menu thả dọc trên môi trường di động
+function toggleMenu() {
+    const navLinks = document.getElementById("nav-links");
+    navLinks.classList.toggle("active");
+}

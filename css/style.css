@@ -215,3 +215,85 @@ th {
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+
+/* Thiết lập nút Menu ẩn mặc định trên Desktop */
+.menu-toggle {
+    display: none;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    background-color: #083875;
+}
+
+@media screen and (max-width: 768px) {
+    /* 1. Tự động co giãn Font size và Padding toàn trang */
+    * {
+        font-size: 15px; /* Giảm nhẹ size chữ chung để vừa màn hình nhỏ */
+    }
+    
+    header {
+        padding: 15px 2%;
+    }
+
+    .logo-area h1 {
+        font-size: 18px;
+    }
+
+    /* 2. Chuyển đổi Thanh điều hướng ngang thành Menu thả dọc */
+    nav ul {
+        display: none; /* Ẩn menu mặc định trên mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--primary-color);
+    }
+
+    nav ul.active {
+        display: flex; /* Hiển thị khi bấm vào nút Menu */
+    }
+
+    nav ul li {
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav ul li a {
+        padding: 12px 20px;
+    }
+
+    .menu-toggle {
+        display: block; /* Hiện nút ba gạch trên Mobile */
+    }
+
+    /* 3. Tối ưu lại khu vực Iframe nội dung chính */
+    .main-container {
+        height: calc(100vh - 200px); /* Tự tính toán lại chiều cao phù hợp */
+    }
+
+    /* 4. Tối ưu Widget Chatbot trên Mobile để không chiếm không gian */
+    .chat-box {
+        width: 90vw; /* Chiếm 90% chiều rộng màn hình điện thoại */
+        height: 70vh;
+        right: -10px;
+        bottom: 80px;
+    }
+    
+    #chat-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    /* 5. Định dạng các khối nội dung bên trong các trang con (Xếp chồng dọc) */
+    .page-content {
+        padding: 20px 4%; /* Thu nhỏ khoảng đệm xuống để tăng không gian đọc */
+    }
+
+    /* Biến các bảng dữ liệu (Table) cồng kềnh thành dạng cuộn ngang để không bị tràn */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
