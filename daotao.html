@@ -3,36 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .cert-card {
+            border-bottom: 1px dashed #ddd;
+            padding: 15px 0;
+        }
+        .cert-card:last-child { border-bottom: none; }
+        .cert-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .cert-list {
+            margin-left: 20px;
+            margin-bottom: 8px;
+            list-style-type: square;
+        }
+        .cert-benefit {
+            background-color: #f0f5fa;
+            padding: 8px 12px;
+            border-left: 3px solid var(--primary-color);
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
 </head>
 <body class="page-content">
     <h2>Các chương trình đào tạo đạt tiêu chuẩn kiểm định quốc tế</h2>
     <p>Đại học Trà Vinh tự hào là một trong những cơ sở giáo dục đại học dẫn đầu cả nước về số lượng ngành học đạt tiêu chuẩn chất lượng giáo dục quốc tế khắt khe, mở ra cơ hội làm việc toàn cầu cho người học.</p>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Tổ chức kiểm định quốc tế</th>
-                <th>Các chương trình đào tạo đạt chuẩn chất lượng</th>
-                <th>Lợi thế nghề nghiệp cho sinh viên</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><b>ABET (Hoa Kỳ)</b></td>
-                <td>Công nghệ thông tin, Công nghệ kỹ thuật cơ khí, Công nghệ kỹ thuật điện - điện tử, Công nghệ kỹ thuật công trình xây dựng.</td>
-                <td>Đạt chuẩn vàng quốc tế về kỹ thuật công nghệ, dễ dàng làm việc tại các tập đoàn đa quốc gia.</td>
-            </tr>
-            <tr>
-                <td><b>FIBAA (Châu Âu)</b></td>
-                <td>Kinh tế, Kế toán, Luật, Quản trị kinh doanh, Tài chính - Ngân hàng, Quản trị văn phòng, Thạc sĩ Quản lý Y tế.</td>
-                <td>Thừa nhận chất lượng quản trị kinh doanh và luật pháp theo quy trình Châu Âu.</td>
-            </tr>
-            <tr>
-                <td><b>AUN-QA (Đông Nam Á)</b></td>
-                <td>Nông nghiệp, Nuôi trồng thủy sản, Thú y, Điều dưỡng, Dược học, Kỹ thuật xét nghiệm y học, Ngôn ngữ Anh, Giáo dục mầm non...</td>
-                <td>Bằng cấp được công nhận rộng rãi giữa các quốc gia thành viên trong khu vực ASEAN.</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="cert-container">
+        <!-- Khối ABET -->
+        <div class="cert-card">
+            <div class="cert-title">✓ Chuẩn ABET (Hoa Kỳ)</div>
+            <p><b>Các chương trình đạt chuẩn:</b></p>
+            <ul class="cert-list">
+                <li>Công nghệ thông tin</li>
+                <li>Công nghệ kỹ thuật cơ khí</li>
+                <li>Công nghệ kỹ thuật điện - điện tử</li>
+                <li>Công nghệ kỹ thuật công trình xây dựng</li>
+            </ul>
+            <div class="cert-benefit">
+                <strong>Lợi thế nghề nghiệp:</strong> Đạt chuẩn vàng quốc tế về kỹ thuật công nghệ, dễ dàng làm việc tại các tập đoàn đa quốc gia.
+            </div>
+        </div>
+
+        <!-- Khối FIBAA -->
+        <div class="cert-card">
+            <div class="cert-title">✓ Chuẩn FIBAA (Châu Âu)</div>
+            <p><b>Các chương trình đạt chuẩn:</b></p>
+            <ul class="cert-list">
+                <li>Khối kinh tế & quản lý: Kinh tế, Kế toán, Quản trị kinh doanh, Tài chính - Ngân hàng, Quản trị văn phòng</li>
+                <li>Khối ngành Luật</li>
+                <li>Sau đại học: Thạc sĩ Quản lý Y tế</li>
+            </ul>
+            <div class="cert-benefit">
+                <strong>Lợi thế nghề nghiệp:</strong> Thừa nhận chất lượng quản trị kinh doanh và luật pháp theo quy trình nghiêm ngặt của Châu Âu.
+            </div>
+        </div>
+
+        <!-- Khối AUN-QA -->
+        <div class="cert-card">
+            <div class="cert-title">✓ Chuẩn AUN-QA (Đông Nam Á)</div>
+            <p><b>Các chương trình đạt chuẩn:</b></p>
+            <ul class="cert-list">
+                <li>Khối sức khỏe: Y tế công cộng, Điều dưỡng, Dược học, Kỹ thuật xét nghiệm y học</li>
+                <li>Khối nông sinh: Nông nghiệp, Nuôi trồng thủy sản, Thú y</li>
+                <li>Khối ngôn ngữ & xã hội: Ngôn ngữ Anh, Giáo dục mầm non...</li>
+            </ul>
+            <div class="cert-benefit">
+                <strong>Lợi thế nghề nghiệp:</strong> Bằng cấp được công nhận rộng rãi giữa các quốc gia thành viên trong khu vực ASEAN.
+            </div>
+        </div>
+    </div>
 </body>
 </html>

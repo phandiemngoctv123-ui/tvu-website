@@ -3,36 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .major-item {
+            background: #fdfdfd;
+            border: 1px solid #eaeaea;
+            border-radius: 6px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+        }
+        .major-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #f1f1f1;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+        .major-name { font-weight: bold; color: var(--primary-color); }
+        .major-code { font-size: 13px; color: #777; background: #eee; padding: 2px 6px; border-radius: 4px; }
+        .major-job { font-size: 14px; color: #555; }
+    </style>
 </head>
 <body class="page-content">
     <h2>Thông tin Tuyển sinh Đại học năm 2026</h2>
-    <p>Trong kỳ tuyển sinh năm 2026, Đại học Trà Vinh áp dụng chính sách hỗ trợ tài chính đặc biệt lớn, tiến hành miễn 100% học phí năm thứ nhất cho tân sinh viên đăng ký nhập học tại 13 ngành học xu hướng sau:</p>
+    <p>Trong kỳ tuyển sinh năm 2026, Đại học Trà Vinh áp dụng chính sách hỗ trợ tài chính đặc biệt lớn, tiến hành <strong>miễn 100% học phí năm thứ nhất</strong> cho tân sinh viên đăng ký nhập học tại 13 ngành học xu hướng sau:</p>
 
-    <table>
-        <thead>
-            <tr>
-                <th>STT</th>
-                <th>Tên ngành đào tạo</th>
-                <th>Mã ngành tuyển sinh</th>
-                <th>Định hướng nghề nghiệp</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>1</td><td>Bảo vệ thực vật</td><td>7620112</td><td>Nông nghiệp công nghệ cao và an toàn sinh học</td></tr>
-            <tr><td>2</td><td>Công nghệ sinh học</td><td>7420201</td><td>Nghiên cứu và ứng dụng sinh học hiện đại</td></tr>
-            <tr><td>3</td><td>Công nghệ kỹ thuật hóa học</td><td>7510401</td><td>Kỹ thuật sản xuất và ứng dụng hóa chất</td></tr>
-            <tr><td>4</td><td>Kỹ thuật môi trường</td><td>7510406</td><td>Quản lý, xử lý chất thải và phát triển bền vững</td></tr>
-            <tr><td>5</td><td>Công nghệ nông nghiệp (Ngành mới)</td><td>7620103</td><td>Ứng dụng thiết bị thông minh trong canh tác [cite: 413]</td></tr>
-            <tr><td>6</td><td>Y tế công cộng</td><td>7720701</td><td>Quản lý và chăm sóc sức khỏe cộng đồng</td></tr>
-            <tr><td>7</td><td>Hóa dược</td><td>7720203</td><td>Nghiên cứu, sản xuất và phát triển dược phẩm</td></tr>
-            <tr><td>8</td><td>Công tác xã hội</td><td>7760101</td><td>Giải quyết các vấn đề an sinh xã hội</td></tr>
-            <tr><td>9</td><td>Tâm lý học (Ngành mới)</td><td>7310401</td><td>Nghiên cứu và tư vấn tâm lý hành vi [cite: 413]</td></tr>
-            <tr><td>10</td><td>Trí tuệ nhân tạo</td><td>7480107</td><td>Phát triển giải pháp phần mềm thông minh, học máy</td></tr>
-            <tr><td>11</td><td>Công nghệ kỹ thuật Cơ điện tử</td><td>7510203</td><td>Thiết kế chế tạo robot và hệ thống tự động hóa</td></tr>
-            <tr><td>12</td><td>Kỹ thuật xây dựng công trình giao thông</td><td>7580205</td><td>Thi công hạ tầng đường bộ, cầu cảng</td></tr>
-            <tr><td>13</td><td>Chính trị học</td><td>7310201</td><td>Nghiên cứu và quản lý hệ thống chính trị</td></tr>
-        </tbody>
-    </table>
+    <div style="margin-top: 20px;">
+        <!-- Ngành 1 -->
+        <div class="major-item">
+            <div class="major-header">
+                <span class="major-name">1. Bảo vệ thực vật</span>
+                <span class="major-code">Mã: 7620112</span>
+            </div>
+            <div class="major-job"><b>Định hướng:</b> Nông nghiệp công nghệ cao và an toàn sinh học.</div>
+        </div>
+
+        <!-- Ngành 2 -->
+        <div class="major-item">
+            <div class="major-header">
+                <span class="major-name">2. Công nghệ sinh học</span>
+                <span class="major-code">Mã: 7420201</span>
+            </div>
+            <div class="major-job"><b>Định hướng:</b> Nghiên cứu và ứng dụng sinh học hiện đại.</div>
+        </div>
+
+        <!-- Ngành 3 -->
+        <div class="major-item">
+            <div class="major-header">
+                <span class="major-name">3. Công nghệ kỹ thuật hóa học</span>
+                <span class="major-code">Mã: 7510401</span>
+            </div>
+            <div class="major-job"><b>Định hướng:</b> Kỹ thuật sản xuất và ứng dụng hóa chất.</div>
+        </div>
+
+        <!-- Ngành 4 -->
+        <div class="major-item">
+            <div class="major-header">
+                <span class="major-name">4. Kỹ thuật môi trường</span>
+                <span class="major-code">Mã: 7510406</span>
+            </div>
+            <div class="major-job"><b>Định hướng:</b> Quản lý, xử lý chất thải và phát triển bền vững.</div>
+        </div>
+
+        <!-- Ngành 5 -->
+        <div class="major-item" style="border-left: 4px solid var(--accent-color);">
+            <div class="major-header">
+                <span class="major-name">5. Công nghệ nông nghiệp (Ngành mới)</span>
+                <span class="major-code">Mã: 7620103</span>
+            </div>
+            <div class="major-job"><b>Định hướng:</b> Ứng dụng thiết bị thông minh, IoT trong canh tác hiện đại.</div>
+        </div>
+
+        <!-- Ngành 6 -->
+        <div class="major-item">
+            <div class="major-header">
+                <span class="major-name">6. Y tế công cộng</span>
+                <span class="major-code">Mã: 7720701</span>
+            </div>
+            <div class="major-job"><b>Định hướng:</b> Quản lý và chăm sóc sức khỏe cộng đồng.</div>
+        </div>
+
+        <!-- Ngành 7 -->
+        <div class="major-item">
+            <div class="major-header">
+                <span class="major-name">7. Hóa dược</span>
+                <span class="major-code">Mã: 7720203</span>
+            </div>
+            <div class="major-job"><b>Định hướng:</b> Nghiên cứu, sản xuất và phát triển dược phẩm.</div>
+        </div>
+
+        <!-- Ngành 8 -->
+        <div class="major-item">
+            <div class="major-header">
+                <span class="major-name">8. Công tác xã hội</span>
+                <span class="major-code">Mã: 7760101</span>
+            </div>
+            <div class="major-job"><b>Định hướng:</b> Giải quyết các vấn đề an sinh xã hội.</div>
+        </div>
+
+        <!-- Ngành 9 -->
+        <div class="major-item" style="border-left: 4px solid var(--accent-color);">
+            <div class="major-header">
+                <span class="major-name">9. Tâm lý học (Ngành mới)</span>
+                <span class="major-code">Mã: 7310401</span>
+            </div>
+            <div class="major-job"><b>Định hướng:</b> Nghiên cứu và tư vấn tâm lý hành vi con người.</div>
+        </div>
+
+        <!-- Ngành 10 -->
+        <div class="major-item">
+            <div class="major-header">
+                <span class="major-name">10. Trí tuệ nhân tạo</span>
+                <span class="major-code">Mã: 7480107</span>
+            </div>
+            <div class="major-job"><b>Định hướng:</b> Phát triển giải pháp phần mềm thông minh, học máy (Machine Learning).</div>
+        </div>
+
+        <!-- Ngành 11 -->
+        <div class="major-item">
+            <div class="major-header">
+                <span class="major-name">11. Công nghệ kỹ thuật Cơ điện tử</span>
+                <span class="major-code">Mã: 7510203</span>
+            </div>
+            <div class="major-job"><b>Định hướng:</b> Thiết kế chế tạo robot và hệ thống tự động hóa.</div>
+        </div>
+
+        <!-- Ngành 12 -->
+        <div class="major-item">
+            <div class="major-header">
+                <span class="major-name">12. Kỹ thuật xây dựng công trình giao thông</span>
+                <span class="major-code">Mã: 7580205</span>
+            </div>
+            <div class="major-job"><b>Định hướng:</b> Thi công hạ tầng đường bộ, cầu cảng.</div>
+        </div>
+
+        <!-- Ngành 13 -->
+        <div class="major-item">
+            <div class="major-header">
+                <span class="major-name">13. Chính trị học</span>
+                <span class="major-code">Mã: 7310201</span>
+            </div>
+            <div class="major-job"><b>Định hướng:</b> Nghiên cứu và quản lý hệ thống chính trị.</div>
+        </div>
+    </div>
     
     <p style="margin-top: 20px; color: var(--accent-color); font-weight: bold;">* Lưu ý đặc biệt: Cấp học bổng miễn giảm thêm 50% học phí toàn khóa dành riêng cho thí sinh NỮ theo học các ngành khối Kỹ thuật - Công nghệ!</p>
 </body>
